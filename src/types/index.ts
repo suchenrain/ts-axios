@@ -19,6 +19,14 @@ export interface AxiosResponse {
 
 export interface AxiosPromise extends Promise<AxiosResponse> {}
 
+export interface AxiosError extends Error {
+  config: AxiosRequestConfig
+  isAxiosError: boolean
+  code?: string
+  request?: any
+  response?: any
+}
+
 export type Method =
   | 'get'
   | 'GET'
