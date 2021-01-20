@@ -19,7 +19,7 @@ function processConfig(config: AxiosRequestConfig) {
 
 function transformUrl(config: AxiosRequestConfig) {
   const { url, params } = config
-  return buildURL(url, params)
+  return buildURL(url!, params)
 }
 
 function transformHeaders(config: AxiosRequestConfig) {
