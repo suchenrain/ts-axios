@@ -21,7 +21,7 @@ stratKeysFromVal2.forEach(key => {
 
 function deepMergeStrat(val1: any, val2: any): any {
   if (isPlainObject(val2)) {
-    return deepMerge(val2)
+    return deepMerge(val1, val2)
   } else if (typeof val2 !== 'undefined') {
     return val2
   } else if (isPlainObject(val1)) {
@@ -41,7 +41,7 @@ export default function mergeConfig(
 ): AxiosRequestConfig {
   if (!config2) config2 = {}
 
-  let config = Object.create(null)
+  const config = Object.create(null)
 
   for (let key in config2) {
     mergeField(key)
