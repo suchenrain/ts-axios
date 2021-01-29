@@ -42,6 +42,8 @@ registerConfigRouter()
 
 registerCancelRouter()
 
+registerMoreRouter()
+
 app.use(router)
 
 const port = process.env.PORT || 8087
@@ -167,5 +169,11 @@ function registerCancelRouter() {
     setTimeout(() => {
       res.json(req.body)
     }, 1000)
+  })
+}
+
+function registerMoreRouter() {
+  router.get('/more/get', function(req, res) {
+    res.json(req.cookies)
   })
 }
